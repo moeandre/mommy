@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+ 
+	<diskStore path="java.io.tmpdir" />
+	
+	 <defaultCache   maxElementsInMemory="10000" 
+                    eternal="true"
+                    overflowToDisk="true"
+                    diskPersistent="true" 
+                    diskExpiryThreadIntervalSeconds="120"
+                    memoryStoreEvictionPolicy="FIFO" />
+ 
+	<cache name="findByNomeCorretorCache" 
+		 maxElementsInMemory="50" 
+         overflowToDisk="true" >
+	</cache>
+	
+	<cache name="findSeguradoByCpfCache" 
+		 maxElementsInMemory="50" 
+         overflowToDisk="true" >
+	</cache>
+	
+	<cache name="findProdutosPVCCache" 
+		 maxElementsInMemory="50" 
+         overflowToDisk="true" >
+	</cache>
+	
+	<cache name="findByIdPnAndCodigoCorretorCache" 
+		 maxElementsInMemory="50" 
+         overflowToDisk="true" >
+	</cache>
+
+	<cache name="findByIdCorretorCache" 
+		 maxElementsInMemory="50" 
+         overflowToDisk="true" >
+	</cache>
+	
+	<cache name="findByIdPnAndCodigoCorretorAndIdProdutoCache" 
+		 maxElementsInMemory="50" 
+         overflowToDisk="true" >
+	</cache>
+ 
+</ehcache>

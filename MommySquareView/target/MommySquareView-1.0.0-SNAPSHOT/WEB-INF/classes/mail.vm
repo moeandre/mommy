@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+        <title>Seguro Auto Tokio Marine</title>
+    </head>
+    <body>
+        <div style="background-color:#F3F3F3; padding:5px; width:585px">
+            <table cellspacing="0" cellpadding="10" border="1" bordercolor="#EBEBEB" style="font-size:12px; font-family:Arial, Helvetica, sans-serif; font-weight:normal">
+                <tr>
+                    <td width="580px" height="80px" bgcolor="#FFFFFF" style="border-bottom-color:#009074; border-bottom-width:3px">
+                     <img src="${corretor.logotipo}">
+                        <p style="width:270px; text-align:right; float:right; font-size:15px; font-weight:bold; color:#009073;">Protocolo: ${numeroCalculo}  </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="580px" bgcolor="#FFFFFF" style="border-top-color:#2C424F; border-top-width:3px">
+                        <p>Ol&aacute;, <strong>$esc.html(${segurado.nomesegurado})</strong></p> 
+                        <p>A Corretora <strong>$esc.html(${corretor.nomeCorretor})</strong>, em parceria com a Tokio Marine Seguradora S/A, apresenta abaixo a cota&ccedil;&atilde;o do seu Seguro de <strong>$esc.html(${produto})</strong> realizada em nosso site em <strong>${dataEnvio}</strong>.</p>
+                        <p>Segue abaixo o <strong>Certificado:</strong></p>
+                        <div style="background-color:#F3F3F3; padding:6px; text-align:center; border-width:1px; border-color:#9DC6BF; border-style:solid; width:40%; margin:0 auto;">
+                          <h3></h3>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="background-color:#F3F3F3; padding:6px; font-size:11px; color:#7f7f7f">
+                            <!-- -->
+                            <div class="framedados" id="dadosInseridosCotacao">
+                              <div class="frm-row">
+                                <div class="colm colm12">
+                                    <h3>Dados do Segurado</h3>
+                                   	<p>Nome: <strong>$esc.html(${segurado.nomesegurado})</strong></p>
+                                    <p>CPF: <strong>${segurado.cgcCpf}</strong></p>
+                                    <p>Email: <strong>${segurado.email}</strong></p>
+                                    <p>Tel Celular: <strong>${segurado.telefonecelular}</strong></p>
+                                </div>
+                              </div>
+                              <hr />
+                              <div class="frm-row">
+                                <div class="colm colm12">
+                                   
+                                    <h3>Detalhes do Produto</h3>
+                                    <p>Produto:<strong>$esc.html(${produto})</strong></p>
+                                     
+                                     <!-- equipamentos -->
+                                     #if ($idProduto == 4)
+                                   		<p>Linha: <strong>${produtoMS.linha}</strong></p>
+                                    	<p>Tipo: <strong>${produtoMS.tipo}</strong></p>
+                                    	<p>Categoria: <strong>${produtoMS.categoria}</strong></p>
+                                    	<p>Marca: <strong>${produtoMS.marca}</strong></p>
+                                     #end
+                                  	 
+                                  	 <!-- seguro garantia -->
+                                  	 #if ($idProduto == 5)
+                                   		<p>Linha: <strong>${produtoMS.linha}</strong></p>
+                                    	<p>Tipo: <strong>${produtoMS.tipo}</strong></p>
+                                    	<p>Categoria: <strong>${produtoMS.categoria}</strong></p>
+                                    	<p>Marca: <strong>${produtoMS.marca}</strong></p>
+                                    	<p>Garantia do Fabricante: <strong>${produtoMS.garantiaFabricante}</strong></p>
+                                    	<p>Data da Venda: <strong>${dataVenda}</strong></p>
+                                     #end
+                                  	 
+                                  	 <!-- ap capitalizacao -->
+                                  	 #if ($idProduto == 6)
+                                   		<p>Data de Nascimento: <strong>$!dataNascimento</strong></p>
+                                    	<p>Valor do Sorteio : <strong>${valorSorteio}</strong></p>
+                                  	 #end
+
+                                  	 <!-- residencial + capitalizacao -->
+                                  	 #if ($idProduto == 7)
+                                   		<p>Logradouro: <strong></strong></p>
+                                   		<p>Cep: <strong>$!produtoMS.cep</strong></p>
+                                    	<p>Numero : <strong>$!produtoMS.numero</strong></p>
+                                    	<p>Complemento : <strong> $!produtoMS.complemento</strong></p>
+                                  	 #end
+                                  	 
+                                  	 <p>Valor do Capital Segurado: <strong>${valorCapitalSegurado}</strong></p>
+                                  	 <p>Valor do Pr&ecirc;mio: <strong>${valorPremio}</strong></p>
+                                     <p>Vig&ecirc;ncia: <strong>${vigencia}</strong></p>	
+
+                                </div>
+                              </div>
+                              <hr />
+                              <div class="frm-row">
+                                <div class="colm colm12">
+                                    <h3>Valor do Seguro</h3>
+                                    <p>Forma de Pagamento: <strong>Cart&atilde;o de Cr&eacute;dito</strong></p>
+                                    <p>Pr&ecirc;mio Total: <strong>${valorPremio}</strong></p>
+                                </div>
+                              </div>
+                              <hr />
+                              <div class="frm-row">
+                                <div class="colm colm12">
+                                    <p>Se preferir, utilize o link apaixo para visualizar sua cota&ccedil;&atilde;o completa:</p> 
+                                    <h3><a href="" style="color:#009073;" >Cota&ccedil;&atilde;o Completa</a>.</h3>
+                                </div>
+                              </div>
+
+                            </div>
+                            <!-- -->
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="580px" bgcolor="#FFFFFF" style="border-top-color:#2C424F; border-top-width:2px">
+                        <p>Em caso de d&uacute;vidas, entre em contato conosco por telefone ou e-mail:</p>
+                        <p>Telefone: <span>${corretor.nomeCorretor}</span></p>
+                        <p>Email: <span>${corretor.email}</span></p>
+                        <p>Atenciosamente</p>
+                        <p><strong>$esc.html(${corretor.nomeCorretor})</strong></p>
+
+                    </td>
+                </tr>    
+                <tr>
+                    <td width="580px" height="80px" bgcolor="#FFFFFF" style="border-bottom-color:#009074; border-bottom-width:3px">
+                        <img src="http://www.tokiomarine.com.br/2011/tokio-marine/Public/Site/images/tokio-marine-seguradora.gif" border="0" height="60"/>
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/views/templates/3.3.1">
+
+	<decorator name="index" page="index.jsp">
+		<pattern>/*</pattern>
+	</decorator>
+
+	<excludes>
+   		<pattern>/home/</pattern>
+   		<pattern>/ajax/*</pattern>
+   		<pattern>/*/ajax/*</pattern>
+   	</excludes>
+
+</decorators>
